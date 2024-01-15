@@ -13,13 +13,13 @@ int main() {
 	thread1.join();
 
 	std::thread thread2{ [&mtx]() {
-		std::lock_guard<std::mutex> lock_{mtx};
+		std::lock_guard<std::mutex> lock{mtx};
 		std::cout << "thread2" << std::endl;
 		} };
 	thread2.join();
 
 	std::thread thread3{ [&mtx]() {
-		std::lock_guard<std::mutex> lock_{mtx};
+		std::lock_guard<std::mutex> lock{mtx};
 		std::cout << "thread3" << std::endl;
 		} };
 	thread3.join();
