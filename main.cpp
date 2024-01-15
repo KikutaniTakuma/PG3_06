@@ -22,8 +22,6 @@ int main() {
 		std::lock_guard<std::mutex> lock_{mtx};
 		std::cout << "thread3" << std::endl;
 		} };
-
-
 	thread3.join();
 
 	return 0;
